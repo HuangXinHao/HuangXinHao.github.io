@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='1.下载hugo，我使用的是windows拓展版本
+2.下载安装git，下载安装go，go需按照hugo说明下载依赖的对应版本
+3.fork一个喜欢的hugo主题，本博客使用stack
+4.将下载解压的hugo.exe文件放到想创建博客项目的文件夹如D:\xiaohuangblog
+5.将D:\xiaohuangblog添加至系统环境变量path中，重启电脑
+6.在D:\xiaohuangblog文件夹打开终端，键入命令创建博客项目
+hugo new site myblog 7.删除myblog文件夹中的config.toml文件
+8.键入命令进入根站点设置git项目初始化
+cd mybloggit init 9.键入命令拉取主题模块
+git submodule add http://github.com/HuangXinHao/hugo-theme-stack/ themes/hugo-theme-stack 10.将myblog\themes\hugo-theme-stack\exampleSite文件夹中的config.yaml文件复制到myblog文件夹下
+PS：本地测试主题hugo server &amp;ndash;theme=hugo-theme-stack &amp;ndash;buildDrafts 浏览器里访问：http://localhost:1313/ 11.创建一个github仓库命名HuangXinHao.github.io然后回到终端键入命令关联本地hugo和远程挂载仓库
+hugo --theme=hugo-theme-stack --baseUrl=&amp;#34;http://HuangXinHao.github.io/&amp;#34;cd publicgit initgit remote add origin https://github.com/HuangXinHao/HuangXinHao.github.iogit add -Agit commit -m &amp;#34;first commit&amp;#34;git push -u origin master 在此之后更新文章，使用hugo生成新的静态页面，并使用git push进行同步
+cd publicgit add .git statusgit commit -m &amp;#34;add blog post&amp;#34;git push 浏览器里访问：http://HuangXinHao.'>
+<title>本hugo博客的搭建和使用</title>
+
+<link rel='canonical' href='/post/my-post-1/'>
+
+<link rel="stylesheet" href="/scss/style.min.5be32ca3f6e1a997c75795c4359147cc6d4fbd34948c0acd51e31d237033978a.css"><meta property='og:title' content='本hugo博客的搭建和使用'>
+<meta property='og:description' content='1.下载hugo，我使用的是windows拓展版本
+2.下载安装git，下载安装go，go需按照hugo说明下载依赖的对应版本
+3.fork一个喜欢的hugo主题，本博客使用stack
+4.将下载解压的hugo.exe文件放到想创建博客项目的文件夹如D:\xiaohuangblog
+5.将D:\xiaohuangblog添加至系统环境变量path中，重启电脑
+6.在D:\xiaohuangblog文件夹打开终端，键入命令创建博客项目
+hugo new site myblog 7.删除myblog文件夹中的config.toml文件
+8.键入命令进入根站点设置git项目初始化
+cd mybloggit init 9.键入命令拉取主题模块
+git submodule add http://github.com/HuangXinHao/hugo-theme-stack/ themes/hugo-theme-stack 10.将myblog\themes\hugo-theme-stack\exampleSite文件夹中的config.yaml文件复制到myblog文件夹下
+PS：本地测试主题hugo server &amp;ndash;theme=hugo-theme-stack &amp;ndash;buildDrafts 浏览器里访问：http://localhost:1313/ 11.创建一个github仓库命名HuangXinHao.github.io然后回到终端键入命令关联本地hugo和远程挂载仓库
+hugo --theme=hugo-theme-stack --baseUrl=&amp;#34;http://HuangXinHao.github.io/&amp;#34;cd publicgit initgit remote add origin https://github.com/HuangXinHao/HuangXinHao.github.iogit add -Agit commit -m &amp;#34;first commit&amp;#34;git push -u origin master 在此之后更新文章，使用hugo生成新的静态页面，并使用git push进行同步
+cd publicgit add .git statusgit commit -m &amp;#34;add blog post&amp;#34;git push 浏览器里访问：http://HuangXinHao.'>
+<meta property='og:url' content='/post/my-post-1/'>
+<meta property='og:site_name' content=''>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-02-22T15:35:16&#43;08:00'/><meta property='article:modified_time' content='2023-02-22T15:35:16&#43;08:00'/>
+<meta name="twitter:title" content="本hugo博客的搭建和使用">
+<meta name="twitter:description" content="1.下载hugo，我使用的是windows拓展版本
+2.下载安装git，下载安装go，go需按照hugo说明下载依赖的对应版本
+3.fork一个喜欢的hugo主题，本博客使用stack
+4.将下载解压的hugo.exe文件放到想创建博客项目的文件夹如D:\xiaohuangblog
+5.将D:\xiaohuangblog添加至系统环境变量path中，重启电脑
+6.在D:\xiaohuangblog文件夹打开终端，键入命令创建博客项目
+hugo new site myblog 7.删除myblog文件夹中的config.toml文件
+8.键入命令进入根站点设置git项目初始化
+cd mybloggit init 9.键入命令拉取主题模块
+git submodule add http://github.com/HuangXinHao/hugo-theme-stack/ themes/hugo-theme-stack 10.将myblog\themes\hugo-theme-stack\exampleSite文件夹中的config.yaml文件复制到myblog文件夹下
+PS：本地测试主题hugo server &amp;ndash;theme=hugo-theme-stack &amp;ndash;buildDrafts 浏览器里访问：http://localhost:1313/ 11.创建一个github仓库命名HuangXinHao.github.io然后回到终端键入命令关联本地hugo和远程挂载仓库
+hugo --theme=hugo-theme-stack --baseUrl=&amp;#34;http://HuangXinHao.github.io/&amp;#34;cd publicgit initgit remote add origin https://github.com/HuangXinHao/HuangXinHao.github.iogit add -Agit commit -m &amp;#34;first commit&amp;#34;git push -u origin master 在此之后更新文章，使用hugo生成新的静态页面，并使用git push进行同步
+cd publicgit add .git statusgit commit -m &amp;#34;add blog post&amp;#34;git push 浏览器里访问：http://HuangXinHao.">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column compact"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_huda2458f72ce188392d75c5d51cd8e24e_373_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/"></a></h1>
+            <h2 class="site-description"></h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/my-post-1/">本hugo博客的搭建和使用</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Feb 22, 2023</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>1.下载hugo，我使用的是windows拓展版本</p>
+<p>2.下载安装git，下载安装go，go需按照hugo说明下载依赖的对应版本</p>
+<p>3.fork一个喜欢的hugo主题，本博客使用stack</p>
+<p>4.将下载解压的hugo.exe文件放到想创建博客项目的文件夹如D:\xiaohuangblog</p>
+<p>5.将D:\xiaohuangblog添加至系统环境变量path中，重启电脑</p>
+<p>6.在D:\xiaohuangblog文件夹打开终端，键入命令创建博客项目</p>
+<pre tabindex="0"><code>hugo new site myblog
+</code></pre><p>7.删除myblog文件夹中的config.toml文件</p>
+<p>8.键入命令进入根站点设置git项目初始化</p>
+<pre tabindex="0"><code>cd myblog
+git init
+</code></pre><p>9.键入命令拉取主题模块</p>
+<pre tabindex="0"><code>git submodule add http://github.com/HuangXinHao/hugo-theme-stack/ themes/hugo-theme-stack
+</code></pre><p>10.将myblog\themes\hugo-theme-stack\exampleSite文件夹中的config.yaml文件复制到myblog文件夹下</p>
+<h5 id="ps本地测试主题hugo-server---themehugo-theme-stack---builddrafts-浏览器里访问httplocalhost1313">PS：本地测试主题hugo server &ndash;theme=hugo-theme-stack &ndash;buildDrafts 浏览器里访问：http://localhost:1313/</h5>
+<p>11.创建一个github仓库命名HuangXinHao.github.io然后回到终端键入命令关联本地hugo和远程挂载仓库</p>
+<pre tabindex="0"><code>hugo --theme=hugo-theme-stack --baseUrl=&#34;http://HuangXinHao.github.io/&#34;
+cd public
+git init
+git remote add origin https://github.com/HuangXinHao/HuangXinHao.github.io
+git add -A
+git commit -m &#34;first commit&#34;
+git push -u origin master
+</code></pre><p>在此之后更新文章，使用hugo生成新的静态页面，并使用git push进行同步</p>
+<pre tabindex="0"><code>cd public
+git add .
+git status
+git commit -m &#34;add blog post&#34;
+git push
+</code></pre><h5 id="浏览器里访问httphuangxinhaogithubio">浏览器里访问：http://HuangXinHao.github.io/</h5>
+<p>本地创建新的草稿命令为hugo new post/newpost.md</p>
+<p>本地生成新的静态页面hugo server &ndash;theme=hugo-theme-stack 或 hugo server &ndash;theme=hugo-theme-stack</p>
+<p>本地发布草稿文章hugo命令带上 &mdash;buildDrafts或  -D</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2023 
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

@@ -1,31 +1,51 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title></title>
-    <link>/</link>
-    <description>Recent content on </description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 22 Feb 2023 15:35:16 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>本hugo博客的搭建和使用</title>
-      <link>/post/my-post-1/</link>
-      <pubDate>Wed, 22 Feb 2023 15:35:16 +0800</pubDate>
-      
-      <guid>/post/my-post-1/</guid>
-      <description>1.下载hugo，我使用的是windows拓展版本
-2.下载安装git，下载安装go，go需按照hugo说明下载依赖的对应版本
-3.fork一个喜欢的hugo主题，本博客使用stack
-4.将下载解压的hugo.exe文件放到想创建博客项目的文件夹如D:\xiaohuangblog
-5.将D:\xiaohuangblog添加至系统环境变量path中，重启电脑
-6.在D:\xiaohuangblog文件夹打开终端，键入命令创建博客项目
-hugo new site myblog 7.删除myblog文件夹中的config.toml文件
-8.键入命令进入根站点设置git项目初始化
-cd mybloggit init 9.键入命令拉取主题模块
-git submodule add http://github.com/HuangXinHao/hugo-theme-stack/ themes/hugo-theme-stack 10.将myblog\themes\hugo-theme-stack\exampleSite文件夹中的config.yaml文件复制到myblog文件夹下
-PS：本地测试主题hugo server &amp;ndash;theme=hugo-theme-stack &amp;ndash;buildDrafts 浏览器里访问：http://localhost:1313/ 11.创建一个github仓库命名HuangXinHao.github.io然后回到终端键入命令关联本地hugo和远程挂载仓库
-hugo --theme=hugo-theme-stack --baseUrl=&amp;#34;http://HuangXinHao.github.io/&amp;#34;cd publicgit initgit remote add origin https://github.com/HuangXinHao/HuangXinHao.github.iogit add -Agit commit -m &amp;#34;first commit&amp;#34;git push -u origin master 在此之后更新文章，使用hugo生成新的静态页面，并使用git push进行同步
-cd publicgit add .git statusgit commit -m &amp;#34;add blog post&amp;#34;git push 浏览器里访问：http://HuangXinHao.</description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title></title>
+        <link>/</link>
+        <description>Recent content on </description>
+        <generator>Hugo -- gohugo.io</generator>
+        <lastBuildDate>Wed, 22 Feb 2023 15:35:16 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>本hugo博客的搭建和使用</title>
+        <link>/post/my-post-1/</link>
+        <pubDate>Wed, 22 Feb 2023 15:35:16 +0800</pubDate>
+        
+        <guid>/post/my-post-1/</guid>
+        <description>&lt;p&gt;1.下载hugo，我使用的是windows拓展版本&lt;/p&gt;
+&lt;p&gt;2.下载安装git，下载安装go，go需按照hugo说明下载依赖的对应版本&lt;/p&gt;
+&lt;p&gt;3.fork一个喜欢的hugo主题，本博客使用stack&lt;/p&gt;
+&lt;p&gt;4.将下载解压的hugo.exe文件放到想创建博客项目的文件夹如D:\xiaohuangblog&lt;/p&gt;
+&lt;p&gt;5.将D:\xiaohuangblog添加至系统环境变量path中，重启电脑&lt;/p&gt;
+&lt;p&gt;6.在D:\xiaohuangblog文件夹打开终端，键入命令创建博客项目&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;hugo new site myblog
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;7.删除myblog文件夹中的config.toml文件&lt;/p&gt;
+&lt;p&gt;8.键入命令进入根站点设置git项目初始化&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cd myblog
+git init
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;9.键入命令拉取主题模块&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git submodule add http://github.com/HuangXinHao/hugo-theme-stack/ themes/hugo-theme-stack
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;10.将myblog\themes\hugo-theme-stack\exampleSite文件夹中的config.yaml文件复制到myblog文件夹下&lt;/p&gt;
+&lt;h5 id=&#34;ps本地测试主题hugo-server---themehugo-theme-stack---builddrafts-浏览器里访问httplocalhost1313&#34;&gt;PS：本地测试主题hugo server &amp;ndash;theme=hugo-theme-stack &amp;ndash;buildDrafts 浏览器里访问：http://localhost:1313/&lt;/h5&gt;
+&lt;p&gt;11.创建一个github仓库命名HuangXinHao.github.io然后回到终端键入命令关联本地hugo和远程挂载仓库&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;hugo --theme=hugo-theme-stack --baseUrl=&amp;#34;http://HuangXinHao.github.io/&amp;#34;
+cd public
+git init
+git remote add origin https://github.com/HuangXinHao/HuangXinHao.github.io
+git add -A
+git commit -m &amp;#34;first commit&amp;#34;
+git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在此之后更新文章，使用hugo生成新的静态页面，并使用git push进行同步&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cd public
+git add .
+git status
+git commit -m &amp;#34;add blog post&amp;#34;
+git push
+&lt;/code&gt;&lt;/pre&gt;&lt;h5 id=&#34;浏览器里访问httphuangxinhaogithubio&#34;&gt;浏览器里访问：http://HuangXinHao.github.io/&lt;/h5&gt;
+&lt;p&gt;本地创建新的草稿命令为hugo new post/newpost.md&lt;/p&gt;
+&lt;p&gt;本地生成新的静态页面hugo server &amp;ndash;theme=hugo-theme-stack 或 hugo server &amp;ndash;theme=hugo-theme-stack&lt;/p&gt;
+&lt;p&gt;本地发布草稿文章hugo命令带上 &amp;mdash;buildDrafts或  -D&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>
