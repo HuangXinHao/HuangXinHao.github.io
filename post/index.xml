@@ -6,6 +6,102 @@
         <description>Recent content in Posts on </description>
         <generator>Hugo -- gohugo.io</generator>
         <lastBuildDate>Wed, 22 Feb 2023 15:35:16 +0800</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>取巧，给已有git项目增加父目录，现项目转为子项目</title>
+        <link>/post/my-post-2/</link>
+        <pubDate>Wed, 22 Feb 2023 15:35:16 +0800</pubDate>
+        
+        <guid>/post/my-post-2/</guid>
+        <description>&lt;p&gt;1.在本地git仓库所在文件夹创建与git项目同名文件夹，如fattyCorps/fattyCorps&lt;/p&gt;
+&lt;p&gt;2.打开idea将除readme和.gitignore文件外的所有文件移动到新建的同名目录，如fattyCorps/fattyCorps下&lt;/p&gt;
+&lt;p&gt;3.将父目录作为idea项目打开&lt;/p&gt;
+&lt;p&gt;4.修改父目录pom.xml文件例如&lt;/p&gt;
+&lt;p&gt;​	&lt;!-- raw HTML omitted --&gt;pom要点主要为子项目&lt;!-- raw HTML omitted --&gt;里的内容要对的上父项目的内容、父项目&lt;!-- raw HTML omitted --&gt;里的内容要对的上子项目的内容&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;
+&amp;lt;project xmlns=&amp;#34;http://maven.apache.org/POM/4.0.0&amp;#34; xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34;
+         xsi:schemaLocation=&amp;#34;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&amp;#34;&amp;gt;
+    &amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt;
+
+    &amp;lt;groupId&amp;gt;com.hxh.admin.parent&amp;lt;/groupId&amp;gt;
+    &amp;lt;artifactId&amp;gt;fattyCorps-admin&amp;lt;/artifactId&amp;gt;
+    &amp;lt;version&amp;gt;1.0.0-SNAPSHOT&amp;lt;/version&amp;gt;
+
+    &amp;lt;modules&amp;gt;
+        &amp;lt;module&amp;gt;fattyCorps&amp;lt;/module&amp;gt;
+        &amp;lt;module&amp;gt;admin-server&amp;lt;/module&amp;gt;
+    &amp;lt;/modules&amp;gt;
+    &amp;lt;packaging&amp;gt;pom&amp;lt;/packaging&amp;gt;
+
+    &amp;lt;name&amp;gt;fattyCorps-admin&amp;lt;/name&amp;gt;
+
+    &amp;lt;properties&amp;gt;
+        &amp;lt;project.build.sourceEncoding&amp;gt;UTF-8&amp;lt;/project.build.sourceEncoding&amp;gt;
+        &amp;lt;project.reporting.outputEncoding&amp;gt;UTF-8&amp;lt;/project.reporting.outputEncoding&amp;gt;
+        &amp;lt;java.version&amp;gt;1.8&amp;lt;/java.version&amp;gt;
+        &amp;lt;maven.compiler.source&amp;gt;1.8&amp;lt;/maven.compiler.source&amp;gt;
+        &amp;lt;maven.compiler.target&amp;gt;1.8&amp;lt;/maven.compiler.target&amp;gt;
+        &amp;lt;spring.boot.version&amp;gt;2.1.0.RELEASE&amp;lt;/spring.boot.version&amp;gt;
+    &amp;lt;/properties&amp;gt;
+
+    &amp;lt;dependencyManagement&amp;gt;
+    &amp;lt;dependencies&amp;gt;
+        &amp;lt;dependency&amp;gt;
+            &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;
+            &amp;lt;artifactId&amp;gt;spring-boot-dependencies&amp;lt;/artifactId&amp;gt;
+            &amp;lt;version&amp;gt;${spring.boot.version}&amp;lt;/version&amp;gt;
+            &amp;lt;type&amp;gt;pom&amp;lt;/type&amp;gt;
+            &amp;lt;scope&amp;gt;import&amp;lt;/scope&amp;gt;
+        &amp;lt;/dependency&amp;gt;
+    &amp;lt;/dependencies&amp;gt;
+    &amp;lt;/dependencyManagement&amp;gt;
+
+&amp;lt;/project&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;5.修改子项目pom.xml，例如&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;
+&amp;lt;project xmlns=&amp;#34;http://maven.apache.org/POM/4.0.0&amp;#34;
+         xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34;
+         xsi:schemaLocation=&amp;#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&amp;#34;&amp;gt;
+    &amp;lt;parent&amp;gt;
+        &amp;lt;groupId&amp;gt;com.hxh.admin.parent&amp;lt;/groupId&amp;gt;
+        &amp;lt;artifactId&amp;gt;fattyCorps-admin&amp;lt;/artifactId&amp;gt;
+        &amp;lt;version&amp;gt;1.0.0-SNAPSHOT&amp;lt;/version&amp;gt;
+    &amp;lt;/parent&amp;gt;
+    &amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt;
+
+    &amp;lt;artifactId&amp;gt;fattyCorps&amp;lt;/artifactId&amp;gt;
+    &amp;lt;version&amp;gt;1.0-SNAPSHOT&amp;lt;/version&amp;gt;
+    &amp;lt;packaging&amp;gt;jar&amp;lt;/packaging&amp;gt;
+
+    &amp;lt;name&amp;gt;fattyCorps&amp;lt;/name&amp;gt;
+    &amp;lt;groupId&amp;gt;com.fattyCorps&amp;lt;/groupId&amp;gt;
+
+    &amp;lt;properties&amp;gt;
+        &amp;lt;project.build.sourceEncoding&amp;gt;UTF-8&amp;lt;/project.build.sourceEncoding&amp;gt;
+        &amp;lt;project.reporting.outputEncoding&amp;gt;UTF-8&amp;lt;/project.reporting.outputEncoding&amp;gt;
+        &amp;lt;java.version&amp;gt;1.8&amp;lt;/java.version&amp;gt;
+    &amp;lt;/properties&amp;gt;
+
+    &amp;lt;dependencies&amp;gt;
+        &amp;lt;!--        spring boot --&amp;gt;
+        &amp;lt;dependency&amp;gt;
+            &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;
+            &amp;lt;artifactId&amp;gt;spring-boot-starter-web&amp;lt;/artifactId&amp;gt;
+        &amp;lt;/dependency&amp;gt;
+    &amp;lt;/dependencies&amp;gt;
+
+    &amp;lt;build&amp;gt;
+        &amp;lt;finalName&amp;gt;fattyCorps&amp;lt;/finalName&amp;gt;
+        &amp;lt;plugins&amp;gt;
+            &amp;lt;plugin&amp;gt;
+                &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;
+                &amp;lt;artifactId&amp;gt;spring-boot-maven-plugin&amp;lt;/artifactId&amp;gt;
+            &amp;lt;/plugin&amp;gt;
+        &amp;lt;/plugins&amp;gt;
+    &amp;lt;/build&amp;gt;
+&amp;lt;/project&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;以上就是给原git项目增加父项目的方式啦~&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>本hugo博客的搭建和使用</title>
         <link>/post/my-post-1/</link>
         <pubDate>Wed, 22 Feb 2023 15:35:16 +0800</pubDate>
